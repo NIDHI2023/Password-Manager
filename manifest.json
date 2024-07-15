@@ -9,7 +9,6 @@
         "128": "icons/icon128.png"
     },
     "browser_action": {
-        "default_popup": "popup.html",
         "default_icon": {
             "16": "icons/icon16.png",
             "48": "icons/icon48.png",
@@ -17,7 +16,26 @@
         },
         "default_title": "Access your passwords"
     },
-    "permissions": ["tabs", "activeTab"],
+    "side_panel": {
+    "default_path": "sidepanel.html"
+  },
+  "sidebar_action": {
+	"default_icon": {
+        "16": "icons/icon16.png",
+        "48": "icons/icon48.png",
+        "128": "icons/icon128.png"
+    },
+	"default_panel": "sidepanel.html"
+},
+    "action": {
+        "default_title": "Click to open panel",
+        "default_icon": {
+        "16": "icons/icon16.png",
+        "48": "icons/icon48.png",
+        "128": "icons/icon128.png"
+    }
+      },
+    "permissions": ["tabs", "activeTab", "sidePanel"],
     "content_scripts": [
         {
             "matches": ["<all_urls>"],
@@ -26,6 +44,6 @@
         }
     ],
     "background": {
-        "scripts": ["background.js"]
+        "scripts": ["background.js", "service-worker.js"]
     }
 }

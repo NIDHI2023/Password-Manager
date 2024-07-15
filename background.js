@@ -5,5 +5,5 @@ chrome.browserAction.setBadgeBackgroundColor({
 	color: '#ff0000'
 });
 chrome.browserAction.setBadgeText({
-	text: 'Hey'
+	text: '1'
 });
