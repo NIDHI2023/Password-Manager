@@ -9,6 +9,7 @@
         "128": "icons/icon128.png"
     },
     "browser_action": {
+        "default_popup": "sidepanel.html",
         "default_icon": {
             "16": "icons/icon16.png",
             "48": "icons/icon48.png",
@@ -17,16 +18,16 @@
         "default_title": "Access your passwords"
     },
     "side_panel": {
-    "default_path": "sidepanel.html"
-  },
-  "sidebar_action": {
-	"default_icon": {
-        "16": "icons/icon16.png",
-        "48": "icons/icon48.png",
-        "128": "icons/icon128.png"
+        "default_path": "sidepanel.html"
     },
-	"default_panel": "sidepanel.html"
-},
+    "sidebar_action": {
+        "default_icon": {
+            "16": "icons/icon16.png",
+            "48": "icons/icon48.png",
+            "128": "icons/icon128.png"
+        },
+        "default_panel": "sidepanel.html"
+    },
     "action": {
         "default_title": "Click to open panel",
         "default_icon": {
@@ -39,7 +40,7 @@
     "content_scripts": [
         {
             "matches": ["<all_urls>"],
-            "css": ["main.css"],
+            "css": ["styles.css"],
             "js": ["content.js"]
         }
     ],
