@@ -7,36 +7,40 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <div class="sidebar">
-        <h2>Password Manager</h2>
-        <ul>
-            <li><button class="sidebar-btn">Home</button></li>
-            <li><button class="sidebar-btn">Folders</button></li>
-            <li><button class="sidebar-btn">Passwords</button></li>
-        </ul>
-    </div>
-    <div class="main-content">
-        <div class="top-bar">
-            <div class="toggle-container">
-                <label class="switch">
-                    <input type="checkbox" id="autofillToggle">
-                    <span class="slider"></span>
-                </label>
-                <label for="autofillToggle">Autofill</label>
+
+    <div class="extension">
+        <body>
+        <div class="sidebar">
+            <h2>Password Manager</h2>
+            <ul>
+                <li><button class="sidebar-btn">Home</button></li>
+                <li><button class="sidebar-btn">Folders</button></li>
+                <li><button class="sidebar-btn">Passwords</button></li>
+            </ul>
+        </div>
+        <div class="main-content">
+            <div class="top-bar">
+                <div class="toggle-container">
+                    <label class="switch">
+                        <input type="checkbox" id="autofillToggle">
+                        <span class="slider"></span>
+                    </label>
+                    <label for="autofillToggle">Autofill</label>
+                </div>
+            </div>
+            <div class="new-button-container">
+                <button id="newButton" class="new-button">+</button>
+                <div id="newOptions" class="new-options hidden">
+                    <button class="option-button" data-type="folder">New Folder</button>
+                    <button class="option-button" data-type="password">New Password</button>
+                </div>
+            </div>
+            <div id="itemsContainer" class="items-container">
+                <!-- Items will be appended here -->
             </div>
         </div>
-        <div class="new-button-container">
-            <button id="newButton" class="new-button">+</button>
-            <div id="newOptions" class="new-options hidden">
-                <button class="option-button" data-type="folder">New Folder</button>
-                <button class="option-button" data-type="password">New Password</button>
-            </div>
-        </div>
-        <div id="itemsContainer" class="items-container">
-            <!-- Items will be appended here -->
-        </div>
+        </body>
     </div>
     <script src="script.js"></script>
-</body>
+
 </html>
