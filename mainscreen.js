@@ -1,40 +1,5 @@
-
-
 document.addEventListener('DOMContentLoaded', () => {
-    const content = document.getElementById('extension');
-
-    function loadPage(page) {
-        fetch(page)
-            .then(response => response.text())
-            .then(html => {
-                content.innerHTML = html;
-                initializePage(page);
-            })
-            .catch(error => {
-                content.innerHTML = '<p>Failed</p>'
-            });
-    }//function within the lambda function
-
-    function initializePage(page) {
-        if (page === 'login.html') {
-            const loginButton = document.getElementById('loginButton');
-            loginButton.addEventListener('click', function() {
-                const username = document.getElementById('username').value;
-                const password = document.getElementById('password').value;
-                if (username && password) {
-                    // Store user info in Chrome storage
-                    chrome.storage.local.set({ username: username, password: password }, function() {
-                        loadPage('mainscreen.html');
-                    });
-                }
-                
-            });
-        } else if (page === 'mainscreen.html') {
-            
-
-
-
-            const newButton = document.getElementById('newButton');
+    const newButton = document.getElementById('newButton');
     const newOptions = document.getElementById('newOptions');
     const itemsContainer = document.getElementById('itemsContainer');
     const autofillToggle = document.getElementById('autofillToggle');
@@ -175,38 +140,5 @@ document.addEventListener('DOMContentLoaded', () => {
     function deleteItem(item) {
         itemsContainer.removeChild(item);
     }
-
-
-
-
-
-
-
-
-
-            chrome.storage.local.get(['username'], function(result) {
-                if (!result) {
-                    document.getElementById('userInfo').textContent = `Welcome, ${result.username}!`;
-                }
-            });
-
-            const logoutButton = document.getElementById('logoutButton');
-            logoutButton.addEventListener('click', function() {
-                // Clear user info from Chrome storage
-                chrome.storage.local.remove('username', function() {
-                    loadPage('login.html');
-                });
-            });
-        }
-    }
-
-    // Check if the user is logged in on page load
-    chrome.storage.local.get(['username'], function(result) {
-        if (result.username) {
-            loadPage('mainscreen.html');
-        } else {
-            loadPage('login.html');
-        }
-    });
 });
 

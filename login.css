@@ -1,0 +1,26 @@
+#loginPage {
+    display:flex;
+    width: 240px;
+    font-family: 'Roboto', sans-serif;
+
+    input {
+        padding-top: 6px;
+        padding-bottom: 6px;
+        margin: 4px;
+    }
+
+    button {
+        background-color: #2196F3;
+        color: white;
+        border: none;
+        /* font-size: 10px; */
+        padding-top: 6px;
+        padding-bottom: 6px;
+        margin: 4px;
+        transition-duration: 0.4s;
+    }
+    
+    button:hover {
+        background-color: #1976D2;
+    }
+}
